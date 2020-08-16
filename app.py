@@ -57,7 +57,7 @@ def main():
         input_variables = pd.DataFrame([[oneM, twoM]], columns = ['oneM', 'twoM'], dtype=string)
         
         
-        return flask.render_template('main.html', original_input = {'Words that are important in the answer (1 mark)':oneM, 'Words that are important in the answer (2 mark)':twoM}, result = count*100/total,)
+        return flask.render_template('main.html', original_input = {'Words that are important in the answer (1 mark)':oneM, 'Words that are important in the answer (2 mark)':twoM}, result = str(count) + "from" + str(total),)
 
 if __name__ == '__main__':
     app.run()
