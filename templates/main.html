@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Smart Test Checker</title>
+    <style>
+        form {
+            margin: auto;
+            width: 40%;
+        }
+
+        .result {
+            margin: auto;
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>Input the words required in an ideal answer</legend>
+            Words that are important in the answer (1 mark):
+            <input name="oneM" type="text" required />
+            <br>
+            Words that are important in the answer (2 mark):
+            <input name="twoM" type="text" required />
+            <br>
+            Image path on your PC (full):
+            <input name="Path" type="text" required />
+            <br>
+            <br>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br>
+    <div class="result" align="center">
+    {% if result %}
+        {% for variable, value in original_input.items() %}
+            <b>{{ variable }}</b> : {{ value }}
+        {% endfor %}
+        <br>
+        <br> Predicted score:
+           <p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+    
+</body>
+
+</html>
