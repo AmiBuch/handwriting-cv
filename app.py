@@ -44,6 +44,7 @@ def main():
   
             data.append(temp)
         count = 0
+        total = len(oneMlist) + 2*len(twoMlist)
         for n in data:
             for m in oneMlist:
                 if n == m:
@@ -56,7 +57,7 @@ def main():
         input_variables = pd.DataFrame([[oneM, twoM]], columns = ['oneM', 'twoM'], dtype=string)
         
         
-        return flask.render_template('main.html', original_input = {'Words that are important in the answer (1 mark)':oneM, 'Words that are important in the answer (2 mark)':twoM}, result = count,)
+        return flask.render_template('main.html', original_input = {'Words that are important in the answer (1 mark)':oneM, 'Words that are important in the answer (2 mark)':twoM}, result = count/total,)
 
 if __name__ == '__main__':
     app.run()
