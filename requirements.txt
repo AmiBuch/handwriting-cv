@@ -1,7 +1,6 @@
 flask
 google.cloud
 google.cloud.vision
-warnings
 nltk.tokenize
 pandas
 gunicorn
