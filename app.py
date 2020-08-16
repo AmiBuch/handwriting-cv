@@ -4,10 +4,7 @@ from google.cloud.vision import types
 import pandas as pd
 import flask
 from nltk.tokenize import sent_tokenize, word_tokenize 
-import warnings 
-  
-warnings.filterwarnings(action = 'ignore') 
-  
+
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'ServiceAccountToken.json'
 client = vision.ImageAnnotatorClient()
